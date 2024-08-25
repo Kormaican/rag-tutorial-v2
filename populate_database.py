@@ -1,7 +1,7 @@
 import argparse
 import os
 import shutil
-from langchain.document_loaders.pdf import PyPDFDirectoryLoader
+from langchain.document_loaders.csv_loader import CSVLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.schema.document import Document
 from get_embedding_function import get_embedding_function
@@ -29,7 +29,11 @@ def main():
 
 
 def load_documents():
-    document_loader = PyPDFDirectoryLoader(DATA_PATH)
+    # document_loader = CSVLoader(DATA_PATH)
+
+    # load a single CSV, for my specific use-case
+    document_loader = CSVLoader(file_path='data/TestIndexforDetailLibrary.csv')
+
     return document_loader.load()
 
 

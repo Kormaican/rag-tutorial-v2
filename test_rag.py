@@ -47,3 +47,5 @@ def query_and_validate(question: str, expected_response: str):
         raise ValueError(
             f"Invalid evaluation result. Cannot determine if 'true' or 'false'."
         )
+
+# TODO - test getting the index of the csv from the sources.
