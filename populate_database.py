@@ -24,27 +24,28 @@ def main():
 
     # Create (or update) the data store.
     documents = load_documents()
-    chunks = split_documents(documents)
-    add_to_chroma(chunks)
+    # chunks = split_documents(documents)
+    # add_to_chroma(chunks)
+    add_to_chroma(documents)
 
 
 def load_documents():
     # document_loader = CSVLoader(DATA_PATH)
 
     # load a single CSV, for my specific use-case
-    document_loader = CSVLoader(file_path='data/TestIndexforDetailLibrary.csv')
+    document_loader = CSVLoader(file_path='data/DetailLibrarySpreadsheet.csv')
 
     return document_loader.load()
 
 
-def split_documents(documents: list[Document]):
-    text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=800,
-        chunk_overlap=80,
-        length_function=len,
-        is_separator_regex=False,
-    )
-    return text_splitter.split_documents(documents)
+# def split_documents(documents: list[Document]):
+#     text_splitter = RecursiveCharacterTextSplitter(
+#         chunk_size=800,
+#         chunk_overlap=80,
+#         length_function=len,
+#         is_separator_regex=False,
+#     )
+#     return text_splitter.split_documents(documents)
 
 
 def add_to_chroma(chunks: list[Document]):
