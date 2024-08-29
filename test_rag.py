@@ -23,6 +23,12 @@ def test_ticket_to_ride_rules():
     )
 
 
+def test_fire_extinghuisher():
+    assert query_and_validate(
+        question= "Give me the file paths for my top best Fire cabinet options to choose from",
+        expected_response="Fire extinghuisher cabinet filepath",
+    )
+
 def query_and_validate(question: str, expected_response: str):
     response_text = query_rag(question)
     prompt = EVAL_PROMPT.format(

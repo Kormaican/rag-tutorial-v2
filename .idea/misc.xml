@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.11 (rag-tutorial-v2)" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11 (rag-tutorial-v2)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9 (rag-tutorial-v2)" project-jdk-type="Python SDK" />
 </project>
