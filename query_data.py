@@ -28,7 +28,7 @@ def main():
     args = parser.parse_args()
     query_text = args.query_text
 
-    #query_rag(query_text)
+    # query_rag(query_text)
 
     query_search_only(query_text)
 
@@ -64,8 +64,18 @@ def query_search_only(query_text: str):
 
     count = 1
     for result in results:
-        filepath_str = select_text_between(result[0].page_content, "REVIT FILE PATH: ", "\n")
-        print(f"{count}. Filepath: \n{filepath_str}\n   Score:{result[1]}")
+        # print(result)
+        script_name = select_text_between(result[0].page_content, "Script Name: ", "\n")
+        descr_str = select_text_between(result[0].page_content, "Description: ", "\n")
+        instr_str = select_text_between(result[0].page_content, "Instruction Manual: ", "\n")
+        locat_str = select_text_between(result[0].page_content, "Location In PyRevit: ", "\n")
+
+        print(str(count) + ". Script: " + str(script_name)
+              + "\n   Description: " + str(descr_str)
+              + "\n   Instruction Manual Location: " + str(instr_str)
+              + "\n   Location In PyRevit: " + str(locat_str)
+              + "\n   Score: " + str(result[1]))
+        count += 1
 
     # with open("results.csv", 'w', newline='') as file:
     #     writer(file).writerows(results)
