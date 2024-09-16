@@ -28,9 +28,9 @@ def main():
     args = parser.parse_args()
     query_text = args.query_text
 
-    # query_rag(query_text)
+    query_rag(query_text)
 
-    query_search_only(query_text)
+    # query_search_only(query_text)
 
 
 def select_text_between(text, start, end):

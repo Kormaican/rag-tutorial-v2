@@ -1,5 +1,10 @@
 pypdf
-langchain
+langchain~=0.2.15
 chromadb # Vector storage
 pytest
 boto3
+
+langchain-community~=0.2.14
+requests~=2.32.3
+langchain-text-splitters~=0.2.2
+beautifulsoup4~=4.12.3
